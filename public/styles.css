@@ -1,11 +1,93 @@
 
-#joehmancont
+#joehmancontainer
 {
     margin: 5vh;
+    width: 95vw;
 
+    text-align: center;
 }
 
 #joehman {
-
     font-size: 5rem;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+#buttons button {
+    transition: transform 0.2s ease;
+
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    font-size: 2rem;
+    padding: 2rem;
+
+    background-color: white;
+}
+
+#buttons button:hover {
+    transform: scale(1.1) translateY(-10%);
+}
+
+#buttons button:active {
+    transform: scale(1) translateY(-10%);
+}
+
+#scrolling-text-container {
+    position:fixed;
+
+    bottom: 0;
+    opacity: 1;
+
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    background-color: cornflowerblue;
+
+    border: 0.5rem solid red;
+
+    padding: 1rem;
+}
+
+.scrolling-track {
+    display: flex;                 /* better than inline-block */
+    width: max-content;            /* ensures perfect width */
+    animation: scroll-left 50s linear infinite;
+    will-change: transform;
+
+    font-size: 1.5rem;
+}
+
+.scrolling-track span {
+    padding-right: 3rem;
+}
+.scrolling-track span:hover {
+    color: white;
+}
+
+.scrolling-track a {
+    text-decoration: none; /* removes underline */
+    color: inherit;        /* uses the same color as parent text */
+    cursor: pointer;       /* optional: keeps pointer on hover */
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
 }
